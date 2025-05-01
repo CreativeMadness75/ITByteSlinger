@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #1C2526 0%, #000 100%);
+    color: #FFFFFF;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: url('banner.jpg') center/cover no-repeat; /* Replace with your banner image path */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3.5rem;
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB;
+    animation: glitch 2s infinite;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: #FFFFFF;
+    text-shadow: 1px 1px 2px #8C5523;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #8C5523;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #FFFFFF;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #FFFFFF;
+    color: #8C5523;
+    box-shadow: 0 0 15px #00DDEB;
+}
+
+/* Glitch Animation */
+@keyframes glitch {
+    0% { text-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB; }
+    50% { text-shadow: 2px 2px 10px #FF00FF, -2px -2px 10px #00FF00; }
+    100% { text-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB; }
+}
+
+/* Services Section */
+.services, .pricing, .payment, .testimonials, .contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.services h2, .pricing h2, .payment h2, .testimonials h2, .contact h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    color: #00DDEB;
+    text-shadow: 0 0 10px #00DDEB;
+    margin-bottom: 40px;
+}
+
+.service-grid, .pricing-grid, .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card, .pricing-card, .testimonial-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #8C5523;
+    padding: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover, .pricing-card:hover, .testimonial-card:hover {
+    box-shadow: 0 0 15px #00DDEB;
+    transform: translateY(-5px);
+}
+
+.service-card h3, .pricing-card h3, .testimonial-card h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5rem;
+    color: #00DDEB;
+}
+
+.service-card p, .pricing-card p, .testimonial-card p {
+    font-size: 1rem;
+    color: #FFFFFF;
+}
+
+/* Contact Form */
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact label {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.2rem;
+    color: #00DDEB;
+}
+
+.contact input, .contact select, .contact textarea {
+    padding: 10px;
+    border: 2px solid #8C5523;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    font-size: 1rem;
+}
+
+.contact input:focus, .contact select:focus, .contact textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00DDEB;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #1C2526;
+    color: #FFFFFF;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
