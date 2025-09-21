@@ -1,3 +1,4 @@
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,15 +6,24 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: linear-gradient(180deg, #1C2526 0%, #000 100%);
     color: #FFFFFF;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Hero Section */
 .hero {
-    height: 80vh;
-    background: url('banner.jpg') center/cover no-repeat; /* Replace with your banner image path */
+    height: 100vh;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+        url('banner.jpg') center/cover no-repeat,
+        linear-gradient(45deg, #1C2526, #000);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,128 +31,437 @@ body {
     position: relative;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 221, 235, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(140, 85, 35, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+    z-index: 2;
+    position: relative;
+}
+
 .hero-content h1 {
     font-family: 'Bebas Neue', cursive;
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     color: #FFFFFF;
-    text-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB;
-    animation: glitch 2s infinite;
+    text-shadow: 
+        0 0 10px #00DDEB, 
+        0 0 20px #00DDEB,
+        0 0 40px #00DDEB;
+    animation: glitch 3s infinite;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
 }
 
 .hero-content p {
-    font-size: 1.2rem;
-    margin: 20px 0;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    margin: 30px 0;
     color: #FFFFFF;
-    text-shadow: 1px 1px 2px #8C5523;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Enhanced Glitch Animation */
+@keyframes glitch {
+    0% { 
+        text-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB;
+        transform: translateX(0);
+    }
+    10% { 
+        text-shadow: 2px 0 #FF00FF, -2px 0 #00FF00;
+        transform: translateX(-2px);
+    }
+    20% { 
+        text-shadow: -2px 0 #FF00FF, 2px 0 #00FF00;
+        transform: translateX(2px);
+    }
+    30% { 
+        text-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB;
+        transform: translateX(0);
+    }
+    100% { 
+        text-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB;
+        transform: translateX(0);
+    }
+}
+
+/* Improved CTA Button */
 .cta-button {
     display: inline-block;
-    padding: 15px 30px;
-    background: #8C5523;
+    padding: 15px 35px;
+    background: linear-gradient(45deg, #8C5523, #B8702E);
     color: #FFFFFF;
     text-decoration: none;
-    border-radius: 5px;
-    border: 2px solid #FFFFFF;
-    transition: all 0.3s ease;
+    border-radius: 8px;
+    border: 2px solid #00DDEB;
+    transition: all 0.4s ease;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 221, 235, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
 }
 
 .cta-button:hover {
-    background: #FFFFFF;
-    color: #8C5523;
-    box-shadow: 0 0 15px #00DDEB;
+    background: linear-gradient(45deg, #00DDEB, #0099AA);
+    color: #000;
+    box-shadow: 
+        0 0 20px #00DDEB,
+        0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
-/* Glitch Animation */
-@keyframes glitch {
-    0% { text-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB; }
-    50% { text-shadow: 2px 2px 10px #FF00FF, -2px -2px 10px #00FF00; }
-    100% { text-shadow: 0 0 10px #00DDEB, 0 0 20px #00DDEB; }
-}
-
-/* Services Section */
+/* Section Styling */
 .services, .pricing, .payment, .testimonials, .contact {
-    padding: 50px 20px;
+    padding: 80px 20px;
     text-align: center;
+    position: relative;
 }
 
+.services::before, .pricing::before, .testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00DDEB, transparent);
+}
+
+/* Enhanced Headers */
 .services h2, .pricing h2, .payment h2, .testimonials h2, .contact h2 {
     font-family: 'Bebas Neue', cursive;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw, 3rem);
     color: #00DDEB;
-    text-shadow: 0 0 10px #00DDEB;
-    margin-bottom: 40px;
+    text-shadow: 
+        0 0 10px #00DDEB,
+        0 0 20px #00DDEB;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
 }
 
-.service-grid, .pricing-grid, .testimonial-grid {
+.services h2::after, .pricing h2::after, .payment h2::after, 
+.testimonials h2::after, .contact h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #8C5523, transparent);
+}
+
+/* Grid Layouts */
+.service-grid, .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto 40px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
+/* Enhanced Cards */
 .service-card, .pricing-card, .testimonial-card {
-    background: rgba(0, 0, 0, 0.8);
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(28, 37, 38, 0.8));
     border: 2px solid #8C5523;
-    padding: 20px;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+    padding: 30px 25px;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before, .pricing-card::before, .testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 221, 235, 0.05), rgba(140, 85, 35, 0.05));
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
 
 .service-card:hover, .pricing-card:hover, .testimonial-card:hover {
-    box-shadow: 0 0 15px #00DDEB;
-    transform: translateY(-5px);
+    box-shadow: 
+        0 10px 30px rgba(0, 221, 235, 0.3),
+        0 0 30px rgba(0, 221, 235, 0.2);
+    transform: translateY(-8px);
+    border-color: #00DDEB;
 }
 
-.service-card h3, .pricing-card h3, .testimonial-card h3 {
+.service-card:hover::before, .pricing-card:hover::before, .testimonial-card:hover::before {
+    opacity: 1;
+}
+
+.service-card h3, .pricing-card h3 {
     font-family: 'Bebas Neue', cursive;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    color: #00DDEB;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.testimonial-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.service-card p, .pricing-card p {
+    font-size: 1rem;
+    color: #CCCCCC;
+    line-height: 1.6;
+}
+
+.testimonial-card p {
+    font-size: 0.9rem;
+    color: #00DDEB;
+    font-weight: 600;
+}
+
+/* Payment Section Styling */
+.payment {
+    background: linear-gradient(135deg, rgba(28, 37, 38, 0.3), rgba(0, 0, 0, 0.3));
+    border-top: 1px solid rgba(0, 221, 235, 0.3);
+    border-bottom: 1px solid rgba(0, 221, 235, 0.3);
+}
+
+.payment p {
+    font-size: 1.1rem;
+    margin: 15px 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.payment strong {
     color: #00DDEB;
 }
 
-.service-card p, .pricing-card p, .testimonial-card p {
-    font-size: 1rem;
-    color: #FFFFFF;
+/* Enhanced Contact Form */
+.contact {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(28, 37, 38, 0.6));
 }
 
-/* Contact Form */
 .contact form {
     max-width: 600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 221, 235, 0.3);
 }
 
 .contact label {
     font-family: 'Bebas Neue', cursive;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: #00DDEB;
+    text-align: left;
+    margin-bottom: -15px;
+    letter-spacing: 1px;
 }
 
 .contact input, .contact select, .contact textarea {
-    padding: 10px;
+    padding: 15px;
     border: 2px solid #8C5523;
-    border-radius: 5px;
+    border-radius: 8px;
     background: rgba(255, 255, 255, 0.1);
     color: #FFFFFF;
     font-size: 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .contact input:focus, .contact select:focus, .contact textarea:focus {
     outline: none;
-    box-shadow: 0 0 10px #00DDEB;
+    box-shadow: 0 0 15px rgba(0, 221, 235, 0.5);
+    border-color: #00DDEB;
+    background: rgba(255, 255, 255, 0.15);
 }
 
-/* Footer */
-footer {
-    padding: 20px;
-    text-align: center;
+.contact textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact select option {
     background: #1C2526;
     color: #FFFFFF;
 }
 
+.contact button {
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+/* Footer */
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: 
+        linear-gradient(135deg, #1C2526, #000),
+        radial-gradient(circle at center, rgba(0, 221, 235, 0.1), transparent);
+    border-top: 2px solid #8C5523;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00DDEB, transparent);
+}
+
 footer p {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    color: #CCCCCC;
+    letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        height: 90vh;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .services, .pricing, .payment, .testimonials, .contact {
+        padding: 60px 15px;
+    }
+    
+    .service-grid, .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact form {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+    
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .service-card, .pricing-card, .testimonial-card {
+        padding: 20px 15px;
+    }
+    
+    .contact form {
+        padding: 20px 15px;
+    }
+}
+
+/* Loading Animation for Better UX */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .hero {
+        height: auto;
+        background: none;
+        color: #000;
+    }
+    
+    .cta-button {
+        border: 2px solid #000;
+        color: #000;
+        background: none;
+    }
+    
+    .glitch {
+        animation: none;
+    }
 }
