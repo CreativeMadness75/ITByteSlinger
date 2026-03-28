@@ -3,11 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITByteSlinger - Creative Madness</title>
+    <meta name="description" content="ITByteSlinger — 31 years of expert IT solutions in networking, cybersecurity, cloud architecture, and technical support for businesses and individuals.">
+    <title>ITByteSlinger - Expert IT Solutions</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">ITByteSlinger</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#payment">Payment</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
@@ -17,107 +37,155 @@
         </div>
     </header>
 
-    <!-- Services Section -->
-    <section class="services">
-        <h2>ITByteSlinger Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>Network Support & Security</h3>
-                <p>Troubleshooting, patching, VPN setup, firewall optimization</p>
-            </div>
-            <div class="service-card">
-                <h3>Server & Cloud Solutions</h3>
-                <p>AWS, virtualization, database management, migrations</p>
-            </div>
-            <div class="service-card">
-                <h3>Hardware & Software Support</h3>
-                <p>PC repairs, upgrades, software installs/configurations</p>
-            </div>
-            <div class="service-card">
-                <h3>Cybersecurity & Compliance</h3>
-                <p>Risk assessments, security audits, best practices</p>
-            </div>
-            <div class="service-card">
-                <h3>Custom IT Projects</h3>
-                <p>Tailored solutions for businesses, automation, DevOps consulting</p>
-            </div>
-        </div>
-        <a href="#pricing" class="cta-button">See Full Services & Pricing →</a>
-    </section>
+    <main>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <h2>Pricing & Packages at ITByteSlinger</h2>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Basic Troubleshooting</h3>
-                <p>Flat hourly rate ($X/hr)</p>
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <h2>ITByteSlinger Services</h2>
+            <div class="service-grid">
+                <div class="service-card scroll-reveal">
+                    <i class="fas fa-network-wired service-icon"></i>
+                    <h3>Network Support & Security</h3>
+                    <p>Troubleshooting, patching, VPN setup, firewall optimization</p>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <i class="fas fa-cloud service-icon"></i>
+                    <h3>Server & Cloud Solutions</h3>
+                    <p>AWS, virtualization, database management, migrations</p>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <i class="fas fa-laptop service-icon"></i>
+                    <h3>Hardware & Software Support</h3>
+                    <p>PC repairs, upgrades, software installs/configurations</p>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <i class="fas fa-lock service-icon"></i>
+                    <h3>Cybersecurity & Compliance</h3>
+                    <p>Risk assessments, security audits, best practices</p>
+                </div>
+                <div class="service-card scroll-reveal">
+                    <i class="fas fa-gears service-icon"></i>
+                    <h3>Custom IT Projects</h3>
+                    <p>Tailored solutions for businesses, automation, DevOps consulting</p>
+                </div>
             </div>
-            <div class="pricing-card">
-                <h3>Advanced Networking Support</h3>
-                <p>Project-based pricing ($X per service)</p>
-            </div>
-            <div class="pricing-card">
-                <h3>Monthly IT Support Plans</h3>
-                <p>Retainer model ($X/month for ongoing service)</p>
-            </div>
-        </div>
-        <a href="#contact" class="cta-button">Request a Custom Quote</a>
-    </section>
+            <a href="#pricing" class="cta-button">See Full Services & Pricing &rarr;</a>
+        </section>
 
-    <!-- Payment Section -->
-    <section class="payment">
-        <h2>Payment & Invoicing</h2>
-        <p><strong>Payment Methods Accepted:</strong> PayPal, Stripe, Direct Bank Transfers</p>
-        <p><strong>Invoice Process:</strong> Invoices are generated after service completion and emailed with payment instructions. Secure online payment is available.</p>
-        <a href="#" class="cta-button">Pay Your Invoice →</a>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <h2>What Clients Say About ITByteSlinger</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <h3>"ITByteSlinger saved my business with their fast network troubleshooting. Highly recommend!"</h3>
-                <p>– John D., Small Business Owner</p>
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing">
+            <h2>Pricing & Packages at ITByteSlinger</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card scroll-reveal">
+                    <i class="fas fa-wrench service-icon"></i>
+                    <h3>Basic Troubleshooting</h3>
+                    <p>Hourly remote or on-site support — contact for current rates</p>
+                </div>
+                <div class="pricing-card scroll-reveal">
+                    <i class="fas fa-diagram-project service-icon"></i>
+                    <h3>Advanced Networking Support</h3>
+                    <p>Project-based pricing — free initial consultation included</p>
+                </div>
+                <div class="pricing-card scroll-reveal">
+                    <i class="fas fa-calendar-check service-icon"></i>
+                    <h3>Monthly IT Support Plans</h3>
+                    <p>Flexible retainer packages tailored to your business needs</p>
+                </div>
             </div>
-            <div class="testimonial-card">
-                <h3>"Their cybersecurity audit was thorough and professional. I feel much safer now."</h3>
-                <p>– Sarah K., Entrepreneur</p>
-            </div>
-        </div>
-    </section>
+            <a href="#contact" class="cta-button">Request a Custom Quote</a>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Get in Touch with ITByteSlinger</h2>
-        <form>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            <label for="service">Service Needed</label>
-            <select id="service" name="service" required>
-                <option value="network">Network Support</option>
-                <option value="cloud">Server/Cloud Solutions</option>
-                <option value="hardware">Hardware/Software Support</option>
-                <option value="cybersecurity">Cybersecurity</option>
-                <option value="custom">Custom Projects</option>
-            </select>
-            <label for="contact-method">Preferred Contact Method</label>
-            <select id="contact-method" name="contact-method" required>
-                <option value="email">Email</option>
-                <option value="phone">Phone</option>
-            </select>
-            <label for="notes">Additional Notes</label>
-            <textarea id="notes" name="notes"></textarea>
-            <button type="submit" class="cta-button">Submit a Request & Get a Free Consultation!</button>
-        </form>
-    </section>
+        <!-- Payment Section -->
+        <section id="payment" class="payment">
+            <h2>Payment & Invoicing</h2>
+            <p><strong>Payment Methods Accepted:</strong> PayPal, Stripe, Direct Bank Transfers</p>
+            <p><strong>Invoice Process:</strong> Invoices are generated after service completion and emailed with payment instructions. Secure online payment is available.</p>
+            <a href="#contact" class="cta-button">Contact for Payment Options &rarr;</a>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="testimonials">
+            <h2>What Clients Say About ITByteSlinger</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card scroll-reveal">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <blockquote>ITByteSlinger saved my business with their fast network troubleshooting. Highly recommend!</blockquote>
+                    <cite>&mdash; John D., Small Business Owner</cite>
+                </div>
+                <div class="testimonial-card scroll-reveal">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <blockquote>Their cybersecurity audit was thorough and professional. I feel much safer now.</blockquote>
+                    <cite>&mdash; Sarah K., Entrepreneur</cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2>Get in Touch with ITByteSlinger</h2>
+            <p class="contact-intro">Fill out the form below and I'll get back to you within 24 hours.</p>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                <label for="service">Service Needed</label>
+                <select id="service" name="service" required>
+                    <option value="" disabled selected>Select a service...</option>
+                    <option value="network">Network Support</option>
+                    <option value="cloud">Server/Cloud Solutions</option>
+                    <option value="hardware">Hardware/Software Support</option>
+                    <option value="cybersecurity">Cybersecurity</option>
+                    <option value="custom">Custom Projects</option>
+                </select>
+                <label for="contact-method">Preferred Contact Method</label>
+                <select id="contact-method" name="contact-method" required>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                </select>
+                <label for="notes">Additional Notes</label>
+                <textarea id="notes" name="notes" placeholder="Describe your issue or project..."></textarea>
+                <button type="submit" class="cta-button">Submit Request &amp; Get a Free Consultation!</button>
+            </form>
+        </section>
+
+    </main>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Creative Madness | ITByteSlinger</p>
+        <p>&copy; 2026 Creative Madness | ITByteSlinger</p>
+        <p class="footer-tagline">Expert IT Solutions — Fast, Reliable, Secure</p>
     </footer>
+
+    <script>
+        // Scroll-reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        // Mobile nav toggle
+        const toggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            toggle.classList.toggle('active');
+        });
+
+        // Close nav on link click (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                toggle.classList.remove('active');
+            });
+        });
+    </script>
+
 </body>
 </html>
